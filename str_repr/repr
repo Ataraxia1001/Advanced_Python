@@ -1,0 +1,2 @@
+str is for user(readable)
+repr is for developer(unambiguous)
