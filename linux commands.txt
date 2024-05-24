@@ -1,0 +1,101 @@
+useful linux command
+
+whoami
+man
+ls -l
+ls -a
+ls -al
+cd ../../..
+cd ~  : go to home dir
+cd /  : go to root dir
+mkdir winter summer  : create two dirs
+mkdir -p winter/seeds/lettuce   : create nested dir even if parent dir doesn't exist.
+rmdir : remove empty dir(=rm -d)
+rm -r : remove recursively(all contents)
+rm -ri : ask y or n for each file
+
+mv -v journal.txt Journal2.txt (verbose, change file name)
+mv cake cookie pie Stuff/  : move 3 files inside Stuff dir
+mv STUFF/ ../  : move STUFF dir in parent dir
+
+cp Journal.txt Today_Journal.txt  : copy Journal.txt as name of Today_Journal.txt
+cp -r STUFF STUFF_COPY  : copy dir and its all contents
+cp Song.txt STUFF/SONG.txt  : copy in STUFF dir
+
+head Song.txt   : show first 10 lines
+head Song.txt -n 100  : show first 100 lines
+tail Song.txt   : show last 10 lines
+tail Song.txt -n 20  :  show last 20 lines
+tail -f system.log   : print end of file and wait for a new addition
+date  : show date and time
+
+date > file.txt  : save date in file.txt
+pwd > file.txt
+head > file.txt
+ls -l > file.txt
+
+pwd >> file.txt : append pwd to file.txt
+
+cat file.txt : show entire file. cat means concatenate
+cat file1 file2 : show both file
+cat butcher.txt feedstor.txt groceries.txt > everything.txt  : write three files in everythins.txt
+
+less file.txt  : one can scroll pages like man page and search.
+echo "Hi"  : just print Hi
+echo "USERNAME=COLT" > config.txt  : save string to config.txt
+echo "key=123" >> cofig.txt  :  append string to config.txt
+
+wc Song.txt   : show the number of lines, words and bytes
+wc -l Song.txt : show the number of lines
+wc -m Song.txt : show the number of characters
+wc -w Song.txt : show the number of words
+
+Combine two commands
+ls -l | wc    : show the number of lines, words and bytes of ls -l result
+ls -1 | wc -l : show the number of files here
+
+ls -1 | wc -l > number.txt  : write the nuber of files in nuber.txt
+
+sort everything.txt   : show sorted result
+sort everything.txt > sortedEverything.txt  
+sort nums  : sort like this (2 234 54 6 999)
+sort -n nums : sort numerically (small to large number, 2 6 54 234 999)
+sort -nr nums : sort reversely `like (999 234 54 6 2)
+sort -nu nums : sort only unique values(no duplicate)
+
+cat butcher.txt groceries.txt | sort
+sort -un nums | wc -l  : count the number of unique numbers
+
+uniq : remove adjacent duplicate
+sort flavors.txt | uniq : remove all duplicates
+sort flavors.txt | uniq -d  : print only duplicates
+sort flavors.txt | uniq -u  : print only unique lines
+sort flavors.txt | uniq -c  : print the number of appearances
+sort flavors.txt | uniq -c | sort -n : sort by the number of appearances
+
+
+echo ~  : print path
+echo $PATH : show all directories that the shell will search through to find executables when you enter a command. If the command you enter matches an executable file in any of these directories, the shell will run that executable.
+
+echo *  : show all files
+echo *.txt : show all txt files
+ls -l *.txt : show all details of txt files
+echo *.??  : show any file name and two characters in extension
+echo {a,b,c}.txt : show a.txt, b.txt and c.txt
+touch app.{js, html, css, py}  : create app.js, app.html, app.css, app.py
+echo {1..99}  : show 1 to 99
+echo Day{1..365} : show Day1 Day2 ... Day365
+
+diff flavors.txt flavors2.txt  : show difference and what happened to that files
+diff -y flavors.txt flavors2.txt  : show both files side by side
+diff -u flavors.txt flavors2.txt  :
+
+
+
+
+
+
+
+
+
+
