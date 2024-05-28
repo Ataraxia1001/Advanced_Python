@@ -38,7 +38,7 @@ pwd >> file.txt : append pwd to file.txt
 
 cat file.txt : show entire file. cat means concatenate
 cat file1 file2 : show both file
-cat butcher.txt feedstor.txt groceries.txt > everything.txt  : write three files in everythins.txt
+cat butcher.txt feedstor.txt groceries.txt > everything.txt  : write three files in everything.txt
 
 less file.txt  : one can scroll pages like man page and search.
 echo "Hi"  : just print Hi
@@ -54,7 +54,7 @@ Combine two commands
 ls -l | wc    : show the number of lines, words and bytes of ls -l result
 ls -1 | wc -l : show the number of files here
 
-ls -1 | wc -l > number.txt  : write the nuber of files in nuber.txt
+ls -1 | wc -l > number.txt  : write the number of files in number.txt
 
 sort everything.txt   : show sorted result
 sort everything.txt > sortedEverything.txt  
@@ -89,6 +89,68 @@ echo Day{1..365} : show Day1 Day2 ... Day365
 diff flavors.txt flavors2.txt  : show difference and what happened to that files
 diff -y flavors.txt flavors2.txt  : show both files side by side
 diff -u flavors.txt flavors2.txt  :
+
+find . -name '*.py'   : find all .py files in current location
+fine STUFF -name '*.txt' : find all txt files in STUFF dir
+find . -type f  : search only files
+find . -type d  : search only dirs
+find . -type d -name '*E*'  :  combine above commands
+find . -name '*E*' -or -name 'F*' :   use two conditions with or
+find -type f -size +100k   : search files bigger than 100 kilobytes
+find -type f -size +100k -exec ls -l {} \;    :   execute ls -l only for the files bigger than 100 kilobytes
+find -type f -size +100k -exec cat {} \;      :   execute cat only for ... 
+
+Note:
+find searches files
+grep searches inside files
+
+
+grep green Song.txt  : show matching 'green's in Song.txt
+grep -n green Song.txt : show matching 'green's with line number
+grep -r "chicken"    :  look inside all files to search "chicken"
+grep -ri "chicken"   :  case-insensitive (both upper and lower case)
+
+
+du  : show all dirs with size
+du -m  : show sizes in megabytes
+du -g  : show sizes in gigabytes
+du -mh  : h is human-readable. (mix with g and m...)
+du -h | sort -h  :  sort files by sizes in human-readable manner
+du -h | sort -h | tail:  show tail of above result 
+
+
+df : for disk usage info
+df -h  : human-readable
+df -h STUFF   : show only in STUFF dir
+
+
+history   : show all commands that I used
+!206 : run 206th command
+history | grep 'ls'    : show all commands including ls
+
+
+ps   :  show current processes status by user
+ps ax  : all current processes
+
+
+top : show processes with cpu usages
+
+kill <PID>  : kill the process
+killall node  : kill all programs node
+
+
+
+jobs  : show stopped process
+bg   : resume it in background
+fg   : resume it in fo
+
+
+gzip file  : compress and replace it with compressed file
+gzip -k file : compress and keep original file
+gzip -d file.gz  : decompress(unzip)
+gunzip file.gz  : unzip(same as above one)
+gzip -kv file  : compress and show how much it reduces by compression
+
 
 
 
