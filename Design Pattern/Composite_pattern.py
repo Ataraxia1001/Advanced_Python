@@ -17,15 +17,6 @@ class Accounting(IDepartment):
     def print_department(self):
         print(f"Accounting Department: {self.employees}")
         
-        
-class Accounting(IDepartment):
-    
-    def __init__(self, employees):
-        self.employees = employees
-        
-    def print_department(self):
-        print(f"Accounting Department: {self.employees}")
-        
 
 class Development(IDepartment):
     
