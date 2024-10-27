@@ -1,4 +1,6 @@
-useful linux command
+Linux tutorial: https://www.youtube.com/watch?v=ZtqBQ68cfJc&list=WL&index=48
+
+useful linux commands
 
 whoami
 man
@@ -150,6 +152,28 @@ gzip -k file : compress and keep original file
 gzip -d file.gz  : decompress(unzip)
 gunzip file.gz  : unzip(same as above one)
 gzip -kv file  : compress and show how much it reduces by compression
+
+
+tar : group multiple files in a single file. 
+
+tar -cf archive.tar a.txt b.txt (not compress)
+tar -xf archive.tar (extract files from an archive)
+tar -tf archive  : see files inside archive
+gzip -k archive.tar  : compress archive file (file extension is .tar.gz)
+tar -czf archive.tar.gz file1 file2  (archive and compress!)
+
+nano editor
+shortcuts
+ctr + k : remove line
+ctr + u : paste
+
+alias : make alternative name for a long command. (not permanent if window is closed)
+alias myls='ls -la' : myls is a new name.
+
+Define alias in .bashrc to make alias permanent.
+
+
+
 
 
 
