@@ -174,6 +174,55 @@ Define alias in .bashrc to make alias permanent.
 
 
 
+xargs: the output of a command is used as the input of another command
+
+ls | sort  : the output of ls is the input of sort
+
+cat deadPlayers.txt | xargs rm   : the content of deadPlayers.txt is argument of rm
+find . -size +1M | xargs ls -lh : all files of which size is bigger than 1M are shown with ls -lh
+
+
+
+ln : create link. a file that points to another file.
+not copy, but point(link)
+
+-- hard link
+ln original.txt hardlink.txt : create hardlink.txt which points original.txt.
+
+if I modify hardlink.txt, original.txt will be modified.(if it was copy, it would not change)
+if I remove original.txt, I can still open same file with hardlink.txt.
+
+-- soft link
+ln -s original.txt symlink.txt : create soft link
+
+if I change original.txt, symlink.txt will be changed.
+if I change symlink.txt, the original.txt will be changed.
+but if I remove the original.txt, the symlink.txt doesn't work anymore!
+
+
+who : displays the users logged in to the system
+
+su : switch user. 
+su <username>
+su - <username> : full setup of new user in shell environment
+
+sudo : run a command as root. (superuser do) The current user must be in the sudoers file.
+
+passwd : change password
+sudo passwd elvis : change elvis's password
+
+chown : the owner change the owner to another user. (change ownership) The owner of the file can do everything with it.
+chown <owner> <file>
+
+chown -R <owner> <file> : recursive. change owner of all files inside.
+chown <owner>:<group> <file> : change group together.
+
+Permission
+
+drwxr-xr-x
+first char : file type. directory(d), normal(-), link(l)...
+next three, three, three : Owner, Group, World. (read, write, execute)
+
 
 
 
