@@ -4,9 +4,9 @@ useful linux commands
 
 whoami
 man
-ls -l
-ls -a
-ls -al
+ls -l : show file list with long format (detailed)
+ls -a : show all files including hidden files.
+ls -al : a and l toghether
 cd ../../..
 cd ~  : go to home dir
 cd /  : go to root dir
