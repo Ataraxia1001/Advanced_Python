@@ -224,9 +224,17 @@ first char : file type. directory(d), normal(-), link(l)...
 next three, three, three : Owner, Group, World. (read, write, execute)
 
 
+chmod : change permissions
 
+u, g, o, a: user(owner), group, others(world), all
 
+chmod g+w file.txt  : add write permission to group
+chmod a-w file.txt : remove write permission to all
 
+chmod a+r file.txt : add read permission to all
+chmod o-rwx file.txt : remove read, write, execute permissions to others
+chmod a=r file.txt : set only read permission to all
+chmod ug+w : add write permission to user and group
 
 
 
